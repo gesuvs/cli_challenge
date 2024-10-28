@@ -1,5 +1,5 @@
 
-type Props = {
+export type Props = {
   tree: string[],
   phrase: string
   depth: number
@@ -18,7 +18,6 @@ export function analyzePhrase({
   function traverse(tree: string[], currentDepth: number) {
 
     if (currentDepth > depth) return;
-
 
     for (const key in tree) {
       const child = tree[key];

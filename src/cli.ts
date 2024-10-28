@@ -8,15 +8,14 @@ const depthIndex = args.findIndex(arg => arg == "--depth");
 const verboseIndex = args.findIndex(arg => arg == "--verb");
 
 
-// if (phraseIndex === -1 || depthIndex === -1) {
-//   console.error('Usage: --phrase "{phrase}" --depth <n> [--verbose]');
-//   process.exit(1);
-// }
+if (phraseIndex === -1 || depthIndex === -1) {
+  console.error('Usage: --phrase "{phrase}" --depth <n> [--verbose]');
+  process.exit(1);
+}
 
 const phrase = args[phraseIndex + 1];
 const depth = parseInt(args[depthIndex + 1]);
 const verbose = verboseIndex !== -1;
-
 
 const { result, analysisTime } = analyzePhrase({
   depth,
